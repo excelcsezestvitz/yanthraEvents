@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Program Quiz</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    h1 {
+  text-align: center;
+}
+
+#program-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.program-card {
+  width: 45%;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px
+}
+  </style>
+</head>
+<body>
+  <h1>Program Quiz</h1>
+  <p>Tick the correct answer for each program:</p>
+  <div id="program-container">
+    <div class="program-card">
+      <h2>Program 1</h2>
+      <p>What is the output of the following program?</p>
+      <pre><code>int main() {
+  int x = 5;
+  int y = 7;
+  int z = x + y;
+  printf("%d\n", z);
+  return 0;
+}</code></pre>
+      <label>
+        <input type="checkbox" name="program1" value="1">
+        12
+      </label>
+      <label>
+        <input type="checkbox" name="program1" value="2">
+        7
+      </label>
+      <label>
+        <input type="checkbox" name="program1" value="3">
+        10
+      </label>
+    </div>
+    <div class="program-card">
+      <h2>Program 2</h2>
+      <p>What is the output of the following program?</p>
+      <pre><code>int main() {
+  int x = 5;
+  int y = 7;
+  int z = x * y;
+  printf("%d\n", z);
+  return 0;
+}</code></pre>
+      <label>
+        <input type="checkbox" name="program2" value="1">
+        12
+      </label>
+      <label>
+        <input type="checkbox" name="program2" value="2">
+        35
+      </label>
+      <label>
+        <input type="checkbox" name="program2" value="3">
+        52
+      </label>
+    </div>
+    <div class="program-card">
+      <h2>Program 3</h2>
+      <p>What is the output of the following program?</p>
+      <pre><code>int main() {
+  int x = 5;
+  int y = 7;
+  int z = x - y;
+  printf("%d\n", z);
+  return 0;
+}</code></pre>
+      <label>
+        <input type="checkbox" name="program3" value="1">
+        -2
+      </label>
+      <label>
+        <input type="checkbox" name="program3" value="2">
+        12
+      </label>
+      <label>
+        <input type="checkbox" name="program3" value="3">
+        35
+      </label>
+    </div>
+    <!-- Add the rest of the program cards here -->
+  </div>
+  <div id="timer">Time remaining: <span id="time"></span></div>
+  <button id="finish-btn">Finish</button>
+  <script src="script.js"></script>
+  <script>
+    // Define an object to store the correct answers
+const correctAnswers = {
+  1: true,
+  2: false,
+  3: false,
+  4: true,
+  5: false,
+  6: true,
+  7: true,
+};
+
+// Define an object to store the user's responses
+const userResponses = {};
+
+// Get all checkboxes with class 'program-checkbox'
+const programCheckboxes = document.querySelectorAll('.program-checkbox');
+
+// Add event listeners to all checkboxes
+programCheckboxes.forEach(function(checkbox) {
+  checkbox.addEventListener('change', function() {
+    const programId = this.value;
+    const isCorrect = this.checked;
+    // Store user's response in the object
+    userResponses[programId] = isCorrect;
+  });
+});
+
+// Add event listener to the 'Finish' button
+const finishBtn = document.querySelector('#finish-btn');
+const timeDisplay = document.querySelector('#time-display');
+const timeLimit = 30; // in seconds
+let timeRemaining = timeLimit;
+
+const timer = setInterval(() => {
+  timeRemaining--;
+  timeDisplay.innerHTML = `Time Remaining: ${timeRemaining}s`;
+  if (timeRemaining <= 0) {
+    clearInterval(timer);
+    finishBtn.disabled = true;
+    timeDisplay.innerHTML = 'Time is up!';
+  }
+}, 1000);
+
+finishBtn.addEventListener('click', function() {
+  // Disable the finish button and stop the timer
+  finishBtn.disabled = true;
+  clearInterval(timer);
+  // Display the correct answers and user's responses
+  for (const programId in userResponses) {
+    const isCorrect = userResponses[programId];
+    const answerElement = document.createElement('p');
+    answerElement.textContent = `Program ${programId}: ${isCorrect ? 'Correct' : 'Incorrect'}`;
+    answerElement.style.color = isCorrect === correctAnswers[programId] ? 'green' : 'red';
+    document.body.appendChild(answerElement);
+  }
+});
+
+  </script>
+</body>
+</html>
