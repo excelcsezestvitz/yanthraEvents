@@ -1,0 +1,645 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style type="text/css">
+      body{
+        background-color: #082f34;
+      }
+      .nav{
+        border-color: blue !important;
+      }
+      .nav-link.active{
+        border-color: blue blue white !important;
+        
+      }
+      .nav-link{
+        color: #082f34 !important;
+        font-weight: 700;
+      }
+      .nav-link:hover{
+        border-color: blue !important;
+      }
+    </style>
+    <title>CH_C</title>
+  </head>
+  <body>
+    <div class="container py-5">
+       <div class="row">
+        <div class="col-12 py-3">
+          <h1 class="text-white text-center">Questions for Code Heist in C languages</h1>
+        </div>
+         <div class="col-12 ">
+             <div class="bg-white rounded p-2">
+               <ul class="nav nav-tabs justify-content-center ">
+                <li class="nav-item ">
+                  <a class="nav-link active" data-bs-toggle="tab" href="#all">C Program</a>
+                </li>
+                <li class="nav-item">
+                  <!-- <a class="nav-link" data-bs-toggle="tab" href="#latest">Latest</a> -->
+                </li>
+                <li class="nav-item">
+                  <!-- <a class="nav-link" data-bs-toggle="tab" href="#week">Papular</a> -->
+                </li>
+              </ul>
+           <div class="row">
+             <div class="col-12">
+               <div class="tab-content p-4 ">
+                 <div id="all" class="tab-pane fade in active show">
+                    <div class="row col">
+                        <div class="col-sm-5 col-md-6"><p>Program 1
+                          <br> <input type="checkbox"> Flag <br>
+                          <b>Hint</b>: Max Element in array</p></div>
+                         
+
+                        <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+                          <pre>
+                            <code>
+                #include <stdio.h>
+                
+                int main()
+                {    
+                    int array[100], maximum, size, c, location = 1;
+                    
+                    printf("Enter the number of elements in array\n");
+                    scanf("%d", &size);
+                    
+                    printf("Enter %d integers\n", size);
+                    
+                    for (c = 0; c < size; c++)
+                        scanf("%d", &array[c]);
+                    
+                    maximum = array[0];
+                    
+                    for (c = 1; c < size; c++)
+                    {
+                        if (array[c] > maximum)
+                        {
+                                maximum  = array[c];
+                                location = c+1;
+                        }
+                    }
+                    
+                    printf("Maximum element is present at location %d and its value is %d.\n", location, maximum);
+                    return 0;    
+                }
+                
+                              </code>
+                          </pre>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row col">
+                        <div class="col-sm-6 col-md-5 col-lg-6">Program 2
+                          <br> <input type="checkbox"> Flag <br>
+                          <b>Hint</b>: Insertion sort ascending order</div>
+                          <!-- <input type="checkbox"> Flag -->
+
+                        <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0">
+                          <pre>
+                            <code>
+                #include <stdio.h>
+                
+                int main()
+                {
+                    int n, array[1000], c, d, t;
+                    
+                    printf("Enter number of elements\n");
+                    scanf("%d", &n);
+                    
+                    printf("Enter %d integers\n", n);
+                    
+                    for (c = 0; c < n; c++) {    
+                        scanf("%d", &array[c]);    
+                    }
+                    
+                    for (c = 1 ; c <= n - 1; c++) {    
+                        d = c;        
+                        while ( d > 0 && array[d] < array[d-1]) {        
+                            t          = array[d];
+                            array[d]   = array[d-1];
+                            array[d-1] = t;        
+                            d--;        
+                        }        
+                    }
+                    
+                    printf("Sorted list in ascending order:\n");
+                    
+                    for (c = 0; c <= n - 1; c++) {    
+                         printf("%d\n", array[c]);    
+                    }
+                    
+                    return 0;
+                }
+                
+                
+                              </code>
+                            </pre>
+                          </div>
+                      </div>
+                      <hr>
+                      <div class="row col">
+                        <div class="col-sm-5 col-md-6">Program 3
+                          <br><input type="checkbox"> Flag <br>
+                          <b>Hint</b>: Number finder</div>
+                          <!-- <input type="checkbox"> Flag -->
+
+                        <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+                          <pre>
+                              <code>
+                <span>
+                #include<stdio.h>
+                #include<conio.h>
+                </span>
+                
+                int main()
+                {
+                   char ch;
+                   clrscr();
+                   printf("Enter character: ");
+                   scanf("%c", &ch);
+                  
+                   if(ch>='0' && ch<='9')
+                   {
+                      printf("%c is DIGIT.", ch);
+                   }
+                   else
+                   {
+                      printf("%c is NOT DIGIT.", ch);
+                   }
+                  
+                   getch();
+                   return(0);
+                }
+                
+                                </code>
+                            </pre>
+                          </div>
+                      </div>
+                  <hr>
+                     <div class="row col">
+                        <div class="col-sm-5 col-md-6">Program 4
+                          <br><input type="checkbox"> Flag <br>
+                          <b>Hint</b>: In program
+                          </div>
+                          <!-- <input type="checkbox"> Flag -->
+
+                        <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+                          <pre>
+                              <code>
+                #include<math.h>
+                #include <stdio.h>
+                int main() {
+                    double a, b, c, discriminant, root1, root2, realPart, imagPart;
+                    printf("Enter coefficients a, b and c: ");
+                    scanf("%lf %lf %lf", &a, &b, &c);
+                
+                    discriminant = b * b - 4 * a * c;
+                
+                    // condition for real and different roots
+                    if (discriminant > 0) {
+                        root1 = (-b + sqrt(discriminant)) / (2 * a);
+                        root2 = (-b - sqrt(discriminant)) / (2 * a);
+                        printf("root1 = %.2lf and root2 = %.2lf", root1, root2);
+                    }
+                
+                    // condition for real and equal roots
+                    else if (discriminant == 0) {
+                        root1 = root2 = -b / (2 * a);
+                        printf("root1 = root2 = %.2lf;", root1);
+                    }
+                
+                    // if roots are not real
+                    else {
+                        realPart = -b / (2 * a);
+                        imagPart = sqrt(-discriminant) / (2 * a);
+                        printf("root1 = %.2lf+%.2lfi and root2 = %.2f-%.2fi", realPart, imagPart, realPart, imagPart);
+                    }
+                }
+                
+                                </code>
+                            </pre>
+                          </div>
+                      </div>
+                  <hr>
+
+                      <div class="row col">
+                        <div class="col-sm-5 col-md-6">Program 5
+                          <br><input type="checkbox"> Flag <br>
+                          <b>Hint</b>: Switch Case</div>
+                          <!-- <input type="checkbox"> Flag -->
+                        <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+                          <pre>
+                              <code>
+                #include<stdio.h>
+                void main() {
+                 char color;
+                
+                 printf("Enter character (R/G/B): ");
+                 color= getchar();
+                 switch (color) {
+                   case 'R':
+                         printf ("Red") ;
+                         break;
+                   case 'G':
+                         printf("Green");
+                         break;
+                   case 'B':
+                         printf("Blue");
+                         break;
+                  }
+                getch();		
+                }
+                
+                                </code>
+                            </pre>
+                          </div>
+                      </div>
+                      <hr>
+                  
+                      <div class="row col">
+                        <div class="col-sm-5 col-md-6">Program 6
+                          <br><input type="checkbox"> Flag <br>
+                          <b>Hint</b>: Array</div>
+                        <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+                          <pre>
+                              <code>
+                #include <stdio.h>
+                int main () {
+                  int A[2] [3] [4] = {{1,2,3,4 ,10,11,12,13, 20,21,22,23}, 
+                                      { 30,31,32,33, 40,41,42,43, 50, 51, 52,53 }} ;
+                  int(*pA) [3] [4] =A ;
+                  int i, j, k;
+                  for ( i =0; i<2; i++) { 
+                    printf("The elements of A[%d] [j] [k] are given below.\n", i);
+                    for ( j =0; j <3; j++) {
+                      for ( k =0; k<4; k++)
+                        printf("%d\t", *(*(*(pA +i) + j) +k));
+                        printf ("\n");
+                    } 
+                  }
+                  printf ("\n");
+                   return 0;
+                }
+                
+                                </code>
+                            </pre>
+                          </div>
+                      </div>
+                  <hr>
+
+                      <div class="row col">
+                        <div class="col-sm-5 col-md-6">Program 7
+                          <br><input type="checkbox"> Flag <br>
+                          <b>Hint</b>: In program</div>
+                        <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+                          <pre>
+                              <code>
+                #include<stdio.h>
+                int main() {
+                 int num;
+                 int zeros, ones;
+                 int b, mask;
+                 printf("Enter an integer number: ");
+                 scanf ("%d",&num);
+                 ones = 0;
+                 mask = 1;
+                 for(b = 0; b < 8 * sizeof(num); b++) {
+                  if (num & mask)
+                    ones++;					
+                    mask <<= 1;
+                 }
+                  zeros= 8 * sizeof(num) - ones;
+                  printf("Zeros: %d Ones: %d\n", zeros, ones);
+                  return 0;
+                }
+                
+                                </code>
+                            </pre>
+                          </div>
+                      </div>
+                      <hr>
+                  
+                      <div class="row col">
+                        <div class="col-sm-5 col-md-6">Program 8
+                          <br><input type="checkbox"> Flag <br>
+                          <b>Hint</b>: Quiz</div>
+                        <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+                          <pre>
+                              <code>
+                #include<stdio.h>
+                #include<string.h>
+                #include<Conio.h> 
+                main() { 
+                  char quest [5][100];
+                  char optionl [3][20],option2 [3][20], 
+                  option3 [3][20],option4 [3][20], 
+                  option5 [3][20]; 
+                  int response[5], correct_ans[5], option,i, marks;  
+                  clrscr();  
+                  strcpy(quest[0], "Name the capital of India");  
+                  strcpy (optionl [0],"1. Mumbai");  
+                  strcpy(optionl[1] ,"2. New Delhi");  
+                  strcpy(optionl[2] ,"3. Chennai");  
+                  correct_ans[0] = 1;  
+                  strcpy(quest[1], "Name the national bird of India");  
+                  strcpy(option2 [0],"1. Peacock");  
+                  strcpy(option2[1], "2. Sparrow");  
+                  strcpy(option2[2],"3. Parrot");  
+                  correct_ans[1]=0;  
+                  strcpy(quest[2], "Name the First Prime minister of India");  
+                  strcpy(option3 [0],"1. M D Gandi");  
+                  strcpy(option3[1] ,"2. S D Sharma");  
+                  strcpy(option3 [2],"3. J L Nehru");  
+                  correct_ans[2]=2;  
+                  strcpy(quest[3], "Name the first female president of India");  
+                  strcpy(option4 [0],"l. Pratibha Patil");  
+                  strcpy(option4[1] ,"2. Sonia Gandhi");  
+                  strcpy(option4[2] ,"3. Indira Gandhi");  
+                  correct_ans[3] = 0;  
+                  strcpy(quest[4], "Name the youngest prime minister of India");  
+                  strcpy(option5[0],"l. Rajiv Gandhi");  
+                  strcpy(option5[1], "2. Sanjay Gandhi");  
+                  strcpy(option5[2],"3. Rahul Gandhi");  
+                  correct_ans[4] = 0; 
+                  do {  
+                    printf("\n\n\n\n QUIZ PROGRAM"); 
+                    printf("\n*******************");  
+                    printf("\n 1. Display Questions");  
+                    printf("\n 2. Display Correct Answers");  
+                    printf("\n 3. Display Result");  
+                    printf("\n 4. EXIT");  
+                    printf ("\n *************************");  
+                    printf("\n\n\n Enter your option: ");  
+                    scanf("%d", &option);  
+                    switch(option)  {  
+                       case 1:    
+                           printf ("\n %s \n", quest [0]);   
+                           for(i=0;i<3;i++)   {   
+                              printf("\n %s", optionl[i]);   
+                           }   
+                           printf ("\n\n Enter your answer number: ");   
+                           scanf("%d", &response[0]);   
+                           printf ("\n %s \n", quest [1]);   
+                           for (i=0;i<3;i++)   {   
+                             printf("\n %s", option2[i]);   
+                           }   
+                           printf("\n\n Enter your answer number: ");   
+                           scanf("%d", &response[1]);   
+                           printf("\n %s \n", quest[2]);  
+                           for(i=0;i<3;i++)  {   
+                             printf("\n %s", option3[i]);  
+                           }   
+                           printf("\n\n Enter your answer number: ");   
+                           scanf ("%d", &response [2]);   
+                           printf("\n %s \n", quest[3]);  
+                           for (i=0;i<3;i++)  {   
+                              printf("\n %s", option4[i]);  
+                           }   
+                           printf("\n\n Enter your answer number: ");   
+                           scanf ("%d", &response [3]);   
+                           printf("\n %s \n", quest[4]);  
+                           for (i=0;i<3;i++)  {   
+                               printf("\n %s", option5[i]);  
+                           }   
+                           printf("\n\n Enter your answer number: ");   
+                           scanf ("%d", &response [4] );   
+                           break;  
+                       case 2:   
+                           printf("\n\n CHECK THE CORRECT ANSWERS");   
+                           printf("\n ************************");   
+                           printf("\n %s \n %s",quest[0] ,optionl[correct_ans[0]]);   
+                           printf("\n\n %s \n%s",quest[1] ,option2[correct_ans[1]]);   
+                           printf("\n\n %s \n%s",quest[2] ,option3[correct_ans[2]]);   
+                           printf("\n\n %s \n%s",quest[3] ,option4[correct_ans[3]]);   
+                           printf("\n\n %s \n%s",quest[4] ,option5[correct_ans[4]]);   
+                           break;  
+                       case 3:   
+                           marks = 0;  
+                           for(i = 0;i <= 4;i++)  {   
+                             if(correct_ans[i]+1==response[i])   {   
+                                marks++;   
+                             }  
+                           }   
+                           printf ("\n Out of 5 you score %d",marks);   
+                           break;  
+                    }  
+                  }  
+                      while(option!=4);  
+                      getch();  
+                      return 0; 
+                }
+                
+                
+                                </code>
+                            </pre>
+                          </div>
+                      </div>
+                  <hr>
+
+                      <div class="row col">
+                        <div class="col-sm-5 col-md-6">Program 9
+                          <br><input type="checkbox"> Flag <br>
+                          <b>Hint</b>: Tower of Hanoi</div>
+                        <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+                          <pre>
+                              <code>
+                #include<stdio.h>
+                void hanoi(int ndisk, char left, char right, char mid);
+                void main() {
+                 int ndisk;
+                 clrscr();
+                 printf("--- Tower of Hanoi ---\n");
+                 printf("Enter number of disks: ");
+                 scanf("%d", &ndisk);
+                 hanoi(ndisk, 'L', 'R', 'M');
+                 getch();
+                }
+                void hanoi(int ndisk, char source, char target, char other) {
+                 if (ndisk > 0) {
+                   hanoi(ndisk - 1, source, other, target);
+                   printf("Move disk from %c to %c\n", source, target);
+                   hanoi(ndisk - 1, other, target, source);
+                 }
+                }
+                
+                                </code>
+                            </pre>
+                          </div>
+                      </div>
+                  <hr>
+                      
+                      <div class="row col">
+                        <div class="col-sm-5 col-md-6">Program 10
+                          <br><input type="checkbox"> Flag <br>
+                          <b>Hint</b>: Inside the program</div>
+                        <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+                          <pre>
+                              <code>
+                #include<stdio.h>
+                int find_arm(int);
+                int power(int, int);
+                int main () {
+                  int num;
+                  printf("Enter any Number to Check its Armstrong Number or not :");
+                  scanf("%d", &num);
+                  if (find_arm(num) == 1)
+                   printf("%d is an Armstrong number.\n", num);
+                  else
+                   printf("%d isn't an Armstrong number.\n", num);
+                  return 0;
+                }
+                int find_arm(int num) {
+                  int sum = 0, temp;
+                  int rem, digits = 0;
+                  temp = num;
+                  while (temp != 0) {
+                   digits++;
+                   temp = temp/10;
+                  }
+                  temp = num;
+                  while (temp != 0) {
+                   rem = temp%10;
+                   sum = sum + power(rem, digits);
+                   temp = temp/10;
+                 }
+                  if (num == sum)
+                   return 1;
+                   else
+                   return 0;
+                }
+                int power(int num, int r) {
+                  int loop;
+                  int prime = 1;
+                  for (loop = 1; loop <= r; loop=loop+1)
+                   prime = prime * num;
+                   return prime;
+                }
+                
+                                </code>
+                            </pre>
+                          </div>
+                      </div>
+                
+                    </div>
+                    <!-- <div class="row">
+                     <div class="col-lg-3 col-md-6 col-sm-10 my-4">
+                       <div class="card">
+                         <img src="media/product_05.jpg" alt="">
+                         <div class="card-body">
+                           <h3 class="card-title">Product name</h3>
+                           <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, autem?</p>
+                           <button class="btn btn-outline-success">Read More</button>
+                         </div>
+                       </div>
+                     </div>
+                     <div class="col-lg-3 col-md-6 col-sm-10 my-4">
+                       <div class="card">
+                         <img src="media/product_02.jpg" alt="">
+                         <div class="card-body">
+                           <h3 class="card-title">Product name</h3>
+                           <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, autem?</p>
+                           <button class="btn btn-outline-success">Read More</button>
+                         </div>
+                       </div>
+                     </div>
+                     <div class="col-lg-3 col-md-6 col-sm-10 my-4">
+                       <div class="card">
+                         <img src="media/product_03.jpg" alt="">
+                         <div class="card-body">
+                           <h3 class="card-title">Product name</h3>
+                           <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, autem?</p>
+                           <button class="btn btn-outline-success">Read More</button>
+                         </div>
+                       </div>
+                     </div>
+                     <div class="col-lg-3 col-md-6 col-sm-10 my-4">
+                       <div class="card">
+                         <img src="media/product_04.jpg" alt="">
+                         <div class="card-body">
+                           <h3 class="card-title">Product name</h3>
+                           <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, autem?</p>
+                           <button class="btn btn-outline-success">Read More</button>
+                         </div>
+                       </div>
+                     </div> -->
+                    <!-- </div> -->
+                 </div>
+                  <div id="latest" class="tab-pane fade ">
+                    <div class="row">
+                     <div class="col-lg-3 col-md-6 col-sm-10 my-4">
+                       <div class="card">
+                         <img src="media/product_05.jpg" alt="">
+                         <div class="card-body">
+                           <h3 class="card-title">Product name</h3>
+                           <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, autem?</p>
+                           <button class="btn btn-outline-success">Read More</button>
+                         </div>
+                       </div>
+                     </div>
+                     <div class="col-lg-3 col-md-6 col-sm-10 my-4">
+                       <div class="card">
+                         <img src="media/product_03.jpg" alt="">
+                         <div class="card-body">
+                           <h3 class="card-title">Product name</h3>
+                           <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, autem?</p>
+                           <button class="btn btn-outline-success">Read More</button>
+                         </div>
+                       </div>
+                     </div>
+                    
+                    </div>
+                 </div>
+                  <div id="week" class="tab-pane fade ">
+                    <!-- <div class="row">
+                     <div class="col-lg-3 col-md-6 col-sm-10 my-4">
+                       <div class="card">
+                         <img src="media/product_06.jpg" alt="">
+                         <div class="card-body">
+                           <h3 class="card-title">Product name</h3>
+                           <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, autem?</p>
+                           <button class="btn btn-outline-success">Read More</button>
+                         </div>
+                       </div>
+                     </div>
+                     <div class="col-lg-3 col-md-6 col-sm-10 my-4">
+                       <div class="card">
+                         <img src="media/product_02.jpg" alt="">
+                         <div class="card-body">
+                           <h3 class="card-title">Product name</h3>
+                           <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, autem?</p>
+                           <button class="btn btn-outline-success">Read More</button>
+                         </div>
+                       </div>
+                     </div>
+                     <div class="col-lg-3 col-md-6 col-sm-10 my-4">
+                       <div class="card">
+                         <img src="media/product_04.jpg" alt="">
+                         <div class="card-body">
+                           <h3 class="card-title">Product name</h3>
+                           <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, autem?</p>
+                           <button class="btn btn-outline-success">Read More</button>
+                         </div>
+                       </div>
+                     </div> -->
+                     
+                 </div>
+
+               </div>
+             </div>
+           </div>
+         </div>
+             </div>
+       </div>
+    </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
