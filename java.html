@@ -325,13 +325,40 @@ public class Test {
                       <div class="row col">
                         <div class="col-sm-5 col-md-6">Program 9
                           <br><input type="checkbox"> Flag <br>
-                          <b>Hint</b>: Substraction maybe overflow</div>
+                          <b>Hint</b>: c       t
+ o     s 
+  d   i  
+   e e   
+    h    
+   e e   
+  d   i  
+ o     s 
+c       t</div>
                         <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
                           <pre>
                               <code>
-public int compareTo(Object o){ 
-    Employee emp = (Employee) o; 
-    return this.id - e.id; 
+class Main {
+ 
+    // string in cross pattern
+    static void pattern(String str, int len)
+    {
+        for (int i = 0; i < len; i++) {
+            int j = len - 1 - i;
+            for (int k = 0; k < len; k++) {
+                if (k == i || k == j)
+                    System.out.print(str.charAt(k));
+                else
+                    System.out.print(" ");
+            }
+            System.out.println("");
+        }
+    }
+    public static void main(String[] args)
+    {
+        String str = "codeheist";
+        int len = str.length();
+        pattern(str, len);
+    }
 }
                 
                                 </code>
@@ -342,19 +369,35 @@ public int compareTo(Object o){
                       <div class="row col">
                         <div class="col-sm-5 col-md-6">Program 10
                           <br><input type="checkbox"> Flag <br>
-                          <b>Hint</b>: Thread 2 to print “x=0”</div>
+                          <b>Hint</b>: Remove vowels a, e, i, o, and u</div>
                         <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
                           <pre>
                               <code>
-int x = 0; 
-boolean bExit = false; 
-                                
-Thread 1 (not synchronized) x = 1; 
-bExit = true; 
-                                
-Thread 2 (not synchronized) 
-if (bExit == true) 
-System.out.println("x=" + x);
+import java.util.*;
+public class Main
+{
+ public static boolean isVowel(char ch)
+{
+  return ch=='a' || ch=='e' || ch=='o' || ch=='i' || ch=='u' || ch=='A' || ch=='E' || ch=='I' || ch=='O' || ch=='U';
+}
+  public static void main(String[] args)
+{
+  Scanner sc=new Scanner(System.in);
+  String str=sc.next();
+  char arr[]=str.toCharArray(); 
+ String res="";
+ if(!isVowel(arr[0]))
+  res+=arr[0];
+ for(int i=1;i<arr.length;i++)
+ {
+    if(isVowel(arr[i])&&isVowel(arr[i-1]))
+      res+=arr[i-1]+""+arr[i];
+     if(!isVowel(arr[i]))
+     res+=arr[i];
+ }
+System.out.println(res);
+}
+}
 
                                 </code>
                             </pre>
