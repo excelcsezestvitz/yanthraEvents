@@ -157,8 +157,6 @@ class RotateRight {
                                                  
                     arr[j] = arr[j-1];    
                  }    
-                                                
-                arr[0] = last;    
             }    
                                            
             System.out.println();    
@@ -195,7 +193,7 @@ public class Reverse
          String reversedStr = "";    
                                             
                                        
-        for(int i = string.length()-1; i >= 0; i--){    
+        for(int i = string.length(); i > 0; i--){    
             reversedStr = reversedStr + string.charAt(i);    
         }    
                                             
@@ -203,9 +201,7 @@ public class Reverse
                                         
         System.out.println("Reverse of given string: " + reversedStr);    
     }    
- }    
-                                
-                
+ }
                                 </code>
                             </pre>
                           </div>
@@ -221,53 +217,17 @@ public class Reverse
 class GFG
 {
                                 
-    static int a, b, c;
-                                 
-                                
-    // Assign c's value to a, a's value 
-                                
-    // to b and b's value to c.
-                                
+    static int a, b, c;                         
     static void swapThree()
                                 
-    {
-                                
-                                             
-                                
-        // Store sum of all in a
-                                
-        // (a = 60)
-                                
+    {        
         a = a + b + c; 
-                                
-                                     
-                                
-        // After this, b has value of a
-                                
-        // (b = 60 - (20 + 30) = 10)
-                                
+     
         b = a - (b + c); 
-                                
-                                     
-                                
-        // After this, c has value of b
-                                
-        // (c = 60 - (10 + 30) = 20)
-                                
-        c = a - (b + c); 
-                                
-                                     
-                                
-        // After this, a has value of c
-                                
-        // (a = 60 - (10 + 20) = 30)
-                                
+        c = a - (b + c);                           
         a = a - (b + c); 
                                 
     }
-                                 
-                                
-    // Driver Code
                                 
     public static void main(String []args)
                                 
@@ -280,17 +240,11 @@ class GFG
                                     a + ", b = " + b +
                                 
                                      ", c = " + c);
-                                
-                                                             
-        // Calling Function
-        swapThree();
         System.out.println("After swapping a = " + 
                                 a + ", b = " + b +
-                                    ", c = " + c)
+                                    ", c = " + c);
     }
 }
-                                
-                
                                 </code>
                             </pre>
                           </div>
